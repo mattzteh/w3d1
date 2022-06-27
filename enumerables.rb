@@ -116,6 +116,7 @@ p [ 1 ].my_reverse               #=> [1]
 # p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
 # p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
     
+<<<<<<< Updated upstream
 # a = [1, 2, 3]
 # p a.my_any? { |num| num > 1 } # => true
 # p a.my_any? { |num| num == 4 } # => false
@@ -131,6 +132,15 @@ p [ 1 ].my_reverse               #=> [1]
 # c = [10, 11, 12]
 # d = [13, 14, 15]
 # p [1, 2].my_zip(a, b, c, d)    # => [[1, 4, 7, 10, 13], [2, 5, 8, 11, 14]]
+
+
+=======
+a = [1, 2, 3]
+p a.my_any? { |num| num > 1 } # => true
+p a.my_any? { |num| num == 4 } # => false
+p a.my_all? { |num| num > 1 } # => false
+p a.my_all? { |num| num < 4 } # => true
+>>>>>>> Stashed changes
 
 
 
