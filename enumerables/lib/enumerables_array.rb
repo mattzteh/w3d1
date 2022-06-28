@@ -47,7 +47,7 @@ class Array
     end
 
     def my_each
-        i=0
+        i = 0
         while i < self.length
             yield self[i]
             i+=1
@@ -55,6 +55,34 @@ class Array
         self
     end
 
+    def my_map
+        mapped = []
+        self.each do |ele|
+            mapped << yield(ele)
+        end
+        mapped
+    end
+
+    def my_select
+        selected = []
+        self.each do |ele|
+            selected << ele if yield(ele)
+        end
+        selected
+    end
+
+    def my_inject(acc = nil, &prc)
+        arr = self.dup
+        acc ||= arr.shift
+        arr.each do |ele|
+            acc = prc.call(acc, ele)
+        end
+        acc 
+    end
+        
 
 
 end
+        
+
+
