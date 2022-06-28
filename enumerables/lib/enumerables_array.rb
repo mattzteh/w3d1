@@ -14,3 +14,47 @@ def subwords(str, arr)
         end
     end
 end
+
+def doubler(arr)
+    doubled = []
+    arr.each do |num|
+        doubled << num * 2
+    end
+    doubled
+end
+
+class Array
+
+    def bubble_sort!(&prc)
+        prc ||= Proc.new{ |num1, num2|  num1 <=> num2 }
+
+        sorted = false
+        while !sorted
+            sorted = true
+            (0...self.length-1).each do |i|
+                if prc.call(self[i], self[i+1]) == 1
+                    self[i], self[i+1] = self[i+1], self[i]
+
+                    sorted = false
+                end
+            end
+        end
+        self
+    end
+
+    def bubble_sort(&prc)
+        self.dup.bubble_sort!(&prc)
+    end
+
+    def my_each
+        i=0
+        while i < self.length
+            yield self[i]
+            i+=1
+        end
+        self
+    end
+
+
+
+end
