@@ -77,7 +77,8 @@ class Array
         arr.each do |ele|
             acc = prc.call(acc, ele)
         end
-        acc 
+        
+        acc
     end
         
 
